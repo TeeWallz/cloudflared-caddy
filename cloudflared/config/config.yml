@@ -1,0 +1,60 @@
+tunnel: "2d27e38f-d5d5-4ab5-abf5-e704fdafa511"
+
+ingress:
+  - hostname: "ssh.tomekwaller.com"
+    service: ssh://host.docker.internal:22
+
+  - hostname: "nas.tomekwaller.com"
+    service: http://host.docker.internal:81
+    noTLSVerify: true
+    originRequest:
+      originServerName: "nas.tomekwaller.com"
+
+  - hostname: "booru.tomekwaller.com"
+    service: https://caddy
+    noTLSVerify: true
+    originRequest:
+      originServerName: "booru.tomekwaller.com"
+
+  - hostname: "boorunsfw.tomekwaller.com"
+    service: https://caddy
+    noTLSVerify: true
+    originRequest:
+      originServerName: "boorunsfw.tomekwaller.com"
+
+  - hostname: "photos.tomekwaller.com"
+    service: https://caddy
+    noTLSVerify: true
+    originRequest:
+      originServerName: "photos.tomekwaller.com"
+
+  - hostname: "portainer.tomekwaller.com"
+    service: https://caddy
+    noTLSVerify: true
+    originRequest:
+      originServerName: "portainer.tomekwaller.com"
+
+  - hostname: "n8n.tomekwaller.com"
+    service: https://caddy
+    noTLSVerify: true
+    originRequest:
+      originServerName: "n8n.tomekwaller.com"
+
+  - hostname: "transmission.tomekwaller.com"
+    service: https://caddy
+    noTLSVerify: true
+    originRequest:
+      originServerName: "transmission.tomekwaller.com"
+
+  # - hostname: "tomekwaller.com"
+  #   service: https://caddy:443
+  #   originRequest:
+  #     originServerName: "tomekwaller.com"
+  # hostname for everything else in form *.domain.tld
+  # - hostname: "*.tomekwaller.com"
+  #   service: https://192.168.112.3:443
+  #   noTLSVerify: true
+  #   originRequest:
+  #     originServerName: "tomekwaller.com"
+
+  - service: http_status:404

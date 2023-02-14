@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  whoami:
+    image: containous/whoami
+    networks:
+      - caddy
+    labels:
+      caddy: whoami.tomekwaller.com
+      caddy.reverse_proxy: "{{upstreams 80}}"
+      #caddy.log.output: output file /var/log/caddy/accesslog
+
+networks:
+  caddy:
+    external: true

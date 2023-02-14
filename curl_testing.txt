@@ -1,0 +1,20 @@
+docker compose exec cloudflared sh -c "apk add curl"
+
+
+docker compose exec cloudflared sh -c "
+curl -k --resolve photos.tomekwaller.com:443:172.31.0.3 https://photos.tomekwaller.com
+"
+
+
+
+curl -k --resolve photos.tomekwaller.com:443:192.168.112.3 https://photos.tomekwaller.com
+
+
+curl -k --resolve photos.tomekwaller.com:443:192.168.112.3 https://photos.tomekwaller.com
+
+
+
+
+
+
+
