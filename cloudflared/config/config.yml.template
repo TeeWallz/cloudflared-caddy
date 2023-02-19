@@ -46,6 +46,14 @@ ingress:
     originRequest:
       originServerName: "transmission.${DOMAIN}"
 
+  - hostname: "plex.${DOMAIN}"
+    service: https://caddy
+    noTLSVerify: true
+    originRequest:
+      originServerName: "plex.${DOMAIN}"
+
+
+
   # - hostname: "${DOMAIN}"
   #   service: https://caddy:443
   #   originRequest:
